@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+
+<!-- Bootstrap core CSS -->
+<title>Login</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}" />
+	
+<!-- myStyle.css CSS -->
+<link href="../static/css/myStyle.css" rel="stylesheet"
+	th:href="@{/css/myStyle.css}" />
+
+</head>
+
+
+<body>
+
+
+		<!-- Permet de decaler du bord -->
+		<div class="col">
+	
+			<!-- Permet d'avoir 2 colonnes -> col-lg-6 -->
+			<!-- Permet d'avoir des espaces entre les panneaux -> mb-4 -->
+			<!-- Permet de centrer -> col-lg-offset-2 -->
+			<!-- Permet de decaler par rapport au dessus -> spacer40 -> via myStyle.css -->
+			<!-- Couleur de fond de panneau -> bg-primary -->
+			<div class="col-lg-4 col-lg-offset-6 spacer50">
+			
+				<!-- Gere le contour du panel -->
+				<div class="card h-100 ">
+					<!-- Gere le titre -->
+					<h4 class="card-header bg-primary" >Authentification</h4>
+					<!-- 	Gere le corps du formulaire  -->
+					<div class="card-body" >
+
+					<!-- Si thymeleaf detecte une error il affiche le message suivant -> param.error -->
+					<!--class="ed" a definir dans myStyle.css -->
+					<div th:if="${param.error}" class="red">
+					Erreur de mot de passe ou
+						Identififant</div>
+						
+						<!-- Si thymeleaf detecte le parametre logout dans la URL il affiche le message suivant -> param.logout -->
+					<!--class="ed" a definir dans myStyle.css -->
+						<div th:if="${param.logout}" class="red">
+						Vous avez bien ete deconnecter
+					</div>
+
+					<!-- 		Formulaire pour chercher un compte  -->
+						<form th:action="@{/login}" method="post">
+						
+							<div>
+								<label>Username </label> 
+								<input type="text" name="username"/>
+							</div>
+							
+							<div>
+								<label>Password :</label> 
+								<input type="password" name="password"/>
+							</div>
+							<button type="submit">Login</button>
+				
+						</form>	
+					</div>
+					<div>
+					admin/admin
+					</div>
+					<div>
+					user/user
+					</div>
+					
+				</div>
+			</div>
+	</div>
+
+
+</body>
+</html>

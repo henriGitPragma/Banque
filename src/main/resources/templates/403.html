@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+
+<!-- Bootstrap core CSS -->
+<title>Ma banque</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}" />
+
+<!-- myStyle.css CSS -->
+<link href="../static/css/myStyle.css" rel="stylesheet"
+	th:href="@{/css/myStyle.css}" />
+
+</head>
+
+<body>
+
+	<!-- Menu -->
+	<nav class="navbar fixed-top navbar-expand-lg bg-dark fixed-top ">
+		<div class="container">
+			<a class="navbar-brand" href="index.html"></a>
+			<button class="navbar-toggler navbar-toggler-right" type="button"
+				data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li><a class="nav-link" th:href="@{/operation}">Operation</a></li>
+					<li><a class="nav-link" th:href="@{/compte}">Compte</a></li>
+					<li><a class="nav-link" th:href="@{/client}">Client</a></li>
+					<li><a class="nav-link" th:href="@{/login?logout}">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Permet de decaler du bord -->
+	<div class="col">
+
+		<!-- Permet d'avoir 2 colonnes -> col-lg-6 -->
+		<!-- Permet d'avoir des espaces entre les panneaux -> mb-4 -->
+		<!-- Permet de centrer -> col-lg-offset-2 -->
+		<!-- Permet de decaler par rapport au dessus -> spacer40 -> via myStyle.css -->
+		<div class="col-lg-4  col-lg-offset-6 spacer100">
+
+			<!-- Gere le contour du panel -->
+			<div class="card h-100 ">
+				<!-- Gere le titre -->
+				<h4 class="card-header">Probleme d'autorisation</h4>
+				<!-- 	Gere le corps du formulaire  -->
+				<div class="card-body">
+					<div class="red">Vous n'avez pas acces a cette
+						fonctionnalitee</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
